@@ -1,0 +1,16 @@
+#+TITLE:  fio2hledger
+
+* fio2hledger
+
+Utility to convert Fio bank account statements
+to [[https://hledger.org][hledger]] journal files.
+
+** Usage
+*** TODO Sample
+
+[[./test/sample.org][Output example]]
+
+*** TODO API
+
+* TODO Parse comments to tags
+* TODO Updater
