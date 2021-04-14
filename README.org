@@ -1,5 +1,3 @@
-#+TITLE:  fio2hledger
-
 * fio2hledger
 
 Utility to convert Fio bank account statements
