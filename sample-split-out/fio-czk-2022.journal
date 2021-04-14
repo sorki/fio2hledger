@@ -14,16 +14,16 @@
 ; *** 2022
 ; **** January
 2022-01-03 (1149196193) Loterie
-    fio:czk                             123.00 CZK
-    fio:czk:income:2900133333/2010     -123.00 CZK
+    assets:fiobank:czk          123.00 CZK
+    income:2900133333/2010     -123.00 CZK
 
 ; **** February
 2022-02-01 (1148734530) Příjem převodem uvnitř banky
-    fio:czk                             456.00 CZK  ; constant: 0558
-    fio:czk:income:2900233333/2010     -456.00 CZK  ; remoteName: Pavel Novák, remoteBankName: Fio banka a.s.
+    assets:fiobank:czk          456.00 CZK  ; constant: 0558
+    income:2900233333/2010     -456.00 CZK  ; remoteName: Pavel Novák, remoteBankName: Fio banka a.s.
 
 ; **** April
 2022-04-04 (1144734781) Platba převodem uvnitř banky  ; Sprava
-    fio:czk                              -579.00 CZK  ; constant: 0558, variable: 42, specific: 1337, user: Uzivatelska identifikace
-    fio:czk:expenses:2900232323/2010      579.00 CZK  ; remoteName: Some Corp, remoteBankName: Fio banka a.s., bic: SOMEBIC
+    assets:fiobank:czk           -579.00 CZK  ; constant: 0558, variable: 42, specific: 1337, user: Uzivatelska identifikace
+    expenses:2900232323/2010      579.00 CZK  ; remoteName: Some Corp, remoteBankName: Fio banka a.s., bic: SOMEBIC
 

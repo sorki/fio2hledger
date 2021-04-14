@@ -117,7 +117,7 @@ fioPayment2Transaction cfg px@Payment{..} =
   , tcomment     = Data.Maybe.fromMaybe "" message
   , tpostings    = [
       (post
-        ("fio:" <> Data.Text.toLower (Money.someDenseCurrency amount))
+        ("assets:fiobank:" <> Data.Text.toLower (Money.someDenseCurrency amount))
         $ convertAmount amount
       ) { pcomment = ourAccountPostingTags }
 

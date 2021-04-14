@@ -14,39 +14,39 @@
 ; *** 2021
 ; **** January
 2021-01-01 (13678095381) Platba kartou  ; Nákup: Seller Name, Location, City, 123 45, CZE, dne 1.1.2021, částka  123.00 CZK
-    fio:czk                  -123.00 CZK  ; comment: Nákup: Seller Name Location City 123 45 CZE dne 1.1.2021 částka  123.00 CZK, variable: 7144
-    fio:czk:výdaje:karta      123.00 CZK  ; seller: Seller Name, location: Location, city: City, postal: 123 45, country: CZE
+    assets:fiobank:czk     -123.00 CZK  ; comment: Nákup: Seller Name Location City 123 45 CZE dne 1.1.2021 částka  123.00 CZK, variable: 7144
+    výdaje:karta            123.00 CZK  ; seller: Seller Name, location: Location, city: City, postal: 123 45, country: CZE
 
 2021-01-02 (12345029733) Platba kartou  ; Výběr z bankomatu: Name, Location, City, 123 45, CZE, dne 2.1.2021, částka  400.00 CZK
-    fio:czk                     -400.00 CZK  ; comment: Výběr z bankomatu: Name Location City 123 45 CZE dne 2.1.2021 částka  400.00 CZK, variable: 7144
-    fio:czk:výdaje:bankomat      400.00 CZK  ; seller: Name, location: Location, city: City, postal: 123 45, country: CZE
+    assets:fiobank:czk     -400.00 CZK  ; comment: Výběr z bankomatu: Name Location City 123 45 CZE dne 2.1.2021 částka  400.00 CZK, variable: 7144
+    výdaje:bankomat         400.00 CZK  ; seller: Name, location: Location, city: City, postal: 123 45, country: CZE
 
 ; **** February
 2021-02-01 (1104734781) Platba převodem uvnitř banky  ; Some message
-    fio:czk                       13.37 CZK  ; constant: 0558, variable: 42, specific: 1337, user: Uzivatelska identifikace
-    fio:czk:příjem:leetCorp      -13.37 CZK  ; remoteName: Leet Corp, remoteBankName: Fio banka a.s., bic: SOMEBIC
+    assets:fiobank:czk       13.37 CZK  ; constant: 0558, variable: 42, specific: 1337, user: Uzivatelska identifikace
+    příjem:leetCorp         -13.37 CZK  ; remoteName: Leet Corp, remoteBankName: Fio banka a.s., bic: SOMEBIC
 
 2021-02-02 (1148734781) Platba převodem uvnitř banky
-    fio:czk                              -1.00 CZK  ; constant: 0558
-    fio:czk:výdaje:2900233333/2010        1.00 CZK  ; remoteBankName: Fio banka a.s.
+    assets:fiobank:czk           -1.00 CZK  ; constant: 0558
+    výdaje:2900233333/2010        1.00 CZK  ; remoteBankName: Fio banka a.s.
 
 2021-02-03 (1149190193) Připsaný úrok
-    fio:czk                    0.01 CZK
-    fio:czk:příjem:úrok       -0.01 CZK
+    assets:fiobank:czk        0.01 CZK
+    příjem:úrok              -0.01 CZK
 
 ; *** 2022
 ; **** January
 2022-01-03 (1149196193) Loterie
-    fio:czk                             123.00 CZK
-    fio:czk:příjem:2900133333/2010     -123.00 CZK
+    assets:fiobank:czk          123.00 CZK
+    příjem:2900133333/2010     -123.00 CZK
 
 ; **** February
 2022-02-01 (1148734530) Příjem převodem uvnitř banky
-    fio:czk                             456.00 CZK  ; constant: 0558
-    fio:czk:příjem:2900233333/2010     -456.00 CZK  ; remoteName: Pavel Novák, remoteBankName: Fio banka a.s.
+    assets:fiobank:czk          456.00 CZK  ; constant: 0558
+    příjem:2900233333/2010     -456.00 CZK  ; remoteName: Pavel Novák, remoteBankName: Fio banka a.s.
 
 ; **** April
 2022-04-04 (1144734781) Platba převodem uvnitř banky  ; Sprava
-    fio:czk                     -579.00 CZK  ; constant: 0558, variable: 42, specific: 1337, user: Uzivatelska identifikace
-    fio:czk:výdaje:someCorp      579.00 CZK  ; remoteName: Some Corp, remoteBankName: Fio banka a.s., bic: SOMEBIC
+    assets:fiobank:czk     -579.00 CZK  ; constant: 0558, variable: 42, specific: 1337, user: Uzivatelska identifikace
+    výdaje:someCorp         579.00 CZK  ; remoteName: Some Corp, remoteBankName: Fio banka a.s., bic: SOMEBIC
 
