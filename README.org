@@ -5,7 +5,7 @@
 Utility to convert Fio bank account statements
 to [[https://hledger.org][hledger]] journal files.
 
-Uses [[https://githubcom/sorki/haskell-fio][haskell-fio]] API client.
+Uses [[https://github.com/sorki/haskell-fio][haskell-fio]] API client.
 
 ** Example
 
