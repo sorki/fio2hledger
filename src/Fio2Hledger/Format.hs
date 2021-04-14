@@ -221,7 +221,7 @@ isPositive amt = Money.withSomeDense amt (>0)
 -- to formet/latter format or empty Text when not available.
 formatAccountNumber :: Payment a -> Text
 formatAccountNumber Payment{..} =
-      Data.Maybe.fromMaybe mempty remoteAcctNum
+      Data.Maybe.fromMaybe "todo" remoteAcctNum
   <> maybe mempty ("/"<>) remoteBankNum
 
 -- | Is this payment a fee we pay to a bank?
