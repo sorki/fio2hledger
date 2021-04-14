@@ -94,6 +94,10 @@ main = do
         toKV [k, v] = pure (k, v)
         toKV _ = Nothing
 
+-- | Query API and generate single journal
+-- with all transactions
+-- Creates @fio-cur.journal@ in current directory
+-- where @cur@ is the currency of the account.
 oneshot :: Config -> IO ()
 oneshot cfg = do
   tokPath <- System.Environment.getEnv "FIO_TOKEN_PATH"
@@ -117,9 +121,6 @@ oneshot cfg = do
         $ formatAccountStatement cfg as
 
 -- | Perform update
--- check span of last, append and create new if needed
--- append loads current journal, checks if we need to add
--- monthly header (last transactions month differs) and appends transaction
 update :: Config -> IO ()
 update cfg = do
   tok <- getToken
@@ -246,6 +247,7 @@ updateSample cfg = do
     Right as ->
       updateInplace cfg as
 
+-- | Generate sample journal in current directory
 sample :: Config -> IO ()
 sample cfg = do
   eAs <- getSample "sample.json"
@@ -269,6 +271,7 @@ sample cfg = do
               ]
         }
 
+-- | Generate split journals from sample in current directory
 splitSample :: Config -> IO ()
 splitSample cfg = do
   eAs <- getSample "sample.json"
