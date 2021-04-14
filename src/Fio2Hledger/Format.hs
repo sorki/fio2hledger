@@ -122,10 +122,7 @@ fioPayment2Transaction cfg px@Payment{..} =
       ) { pcomment = ourAccountPostingTags }
 
     , (post
-        ("fio:"
-          <> Data.Text.toLower (Money.someDenseCurrency amount)
-          <> ":"
-          <> formatRemote cfg px)
+        (formatRemote cfg px)
         missingamt
       ) { pcomment =
             remoteAccountPostingTags
