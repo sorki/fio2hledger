@@ -1,0 +1,5 @@
+for d in sample-out sample-split-out sample-split-up-out; do
+  pushd $d
+  for i in *.journal; do cp -v $i{,.golden}; done
+  popd
+done
