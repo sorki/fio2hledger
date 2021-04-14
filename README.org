@@ -5,12 +5,79 @@
 Utility to convert Fio bank account statements
 to [[https://hledger.org][hledger]] journal files.
 
+Uses [[https://githubcom/sorki/haskell-fio][haskell-fio]] API client.
+
+** Example
+
+See [[./sample-out/fio-czk.journal][output example]].
+
+[[./full.png][./prev.png]]
+
+
+
 ** Usage
-*** TODO Sample
+*** Create a token
 
-[[./test/sample.org][Output example]]
+Create new read-only token for your account and save it to file. Set ~FIO_TOKEN_PATH~ to point to
+the file. If you have multiple accounts you need to create multiple tokens.
 
-*** TODO API
+#+BEGIN_SRC sh
+export FIO_TOKEN_PATH=./fio.token
+#+END_SRC
 
-* TODO Parse comments to tags
-* TODO Updater
+*** Oneshot
+
+To generate journal file containing all transactions use
+
+#+BEGIN_SRC sh
+fio2hledger oneshot
+#+END_SRC
+
+This generates ~fio-czk.journal~ file in current directory (name depends on actual account currency).
+
+You can now compare account balance (~fio:czk~) with your actual account balance using ~hleder~:
+
+#+BEGIN_SRC sh
+hledger -f fio-czk.journal bal
+#+END_SRC
+
+*** Periodic
+
+It is also possible to create yearly journals with top-level journal file
+importing all years and update periodically.
+
+**** Initialize storage
+
+Change to a directory where you want to keep your journal files and issue ~init~ command.
+
+#+BEGIN_SRC sh
+fio2hledger init
+#+END_SRC
+
+This creates one journal file per year (see [[./sample-split-out]] directory) with
+toplevel ~fio-xyz.journal~ importing yearly journals.
+
+**** Update
+
+To update with new transactions, issue ~update~ command. This pulls last transactions and appends to current yearly journal.
+
+#+BEGIN_SRC sh
+fio2hledger update
+#+END_SRC
+
+** Configuration
+
+Consult ~fio2hledger --help~ for all available options.
+
+*** Known account mapping
+
+Adding ~--map account.map~ argument instructs the tool to load account aliases (renaming rules) from ~account.map~ file and rename appropriately.
+
+Format of the map file is ~originalAccount newAccount~, for example:
+
+#+BEGIN_SRC conf
+2900133700/2010 leetCorp
+2900232323/2010 someCorp
+#+END_SRC
+
+Note: Account names cannot contain spaces.
