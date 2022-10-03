@@ -151,7 +151,7 @@ fioPayment2Transaction cfg px@Payment{..} =
     -- Balance this transaction, shouldn't ever fail
     -- since our second posting is always nullamt (for now..)
     balanceOrDie :: Transaction -> Transaction
-    balanceOrDie t = case balanceTransaction mempty t of
+    balanceOrDie t = case balanceTransaction defbalancingopts t of
       Right x -> x
       Left er -> error $ "Can't balance transaction, error was: " ++ er
 
