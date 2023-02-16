@@ -147,9 +147,10 @@ updateInplace cfg as = do
     exists <- System.Directory.doesFileExist filename
     if exists then
       (do
-        mj <- Hledger.readJournalFile
-          Hledger.definputopts
-          ("journal:" ++ filename)
+        mj <- Hledger.runExceptT $
+          Hledger.readJournalFile
+            Hledger.definputopts
+            ("journal:" ++ filename)
 
         case mj of
           Left e ->
