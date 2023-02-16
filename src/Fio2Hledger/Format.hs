@@ -25,7 +25,7 @@ import qualified Data.List
 import qualified Money
 import qualified Safe
 
-import Hledger hiding (amount)
+import Hledger
 import Data.Function (on)
 import Text.Pretty.Simple
 
