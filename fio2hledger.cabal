@@ -42,7 +42,7 @@ library
                      , data-default
                      , directory
                      , fio
-                     , hledger-lib
+                     , hledger-lib >= 1.27 && < 1.28
                      , optparse-applicative
                      , pretty-simple
                      , safe
